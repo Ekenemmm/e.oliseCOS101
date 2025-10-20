@@ -1,3 +1,4 @@
+//problem 1 on finding roots 
 use std::io;
 
 fn main() {
@@ -17,10 +18,10 @@ fn main() {
     io::stdin().read_line(&mut input3).expect("Not a valid string");
     let c: f64 = input3.trim().parse().expect("Not a valid number");
 
-    let discriminant = (b * b) - (4.0 * a * c);
+    let discriminant = (b * b) - (4.0 * a * c); // d= b^2 -4ac math formula
 
     if discriminant > 0.0 {
-        let root1 = (-b + discriminant.sqrt()) / (2.0 * a);
+        let root1 = (-b + discriminant.sqrt()) / (2.0 * a); // x= - root(b^2 -4ac)/2a
         let root2 = (-b - discriminant.sqrt()) / (2.0 * a);
 
         println!("Two distinct roots: {} and {}", root1, root2);
