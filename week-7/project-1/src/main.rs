@@ -3,8 +3,8 @@ use std::io;
 fn main() {
     println!("===== Area and Volume Calculator =====");
 
-    loop {
-        println!("Do you want to calculate area or volume ? (A/V)");
+    loop { //so the user can perform multiple calculations
+        println!("Do you want to calculate area or volume ? (A/V)"); //area or volume
         let mut choice= String::new();
         io::stdin().read_line(&mut choice).expect("Failed to read input");
         let choice = choice.trim().to_uppercase();
@@ -25,7 +25,7 @@ fn main() {
                 "2" => area_rhombus(),
                 "3" => area_parallelogram(),
                 "4" => area_cube(),
-                _ => println!("Apologies, this calculation is unavailable"),
+                _ => println!("Apologies, this calculation is unavailable"), //if they input another option that is not currently in my code
             }
 
 
@@ -34,17 +34,17 @@ fn main() {
         else if choice == "V" {
             volume_cylinder();
         }
-        println!("Do you want to do another calculation? (Y/N)");
+        println!("Do you want to do another calculation? (Y/N)"); //allows for multiple calculations
         let mut again = String::new();
         io::stdin().read_line(&mut again).expect("Failed to read input");
         
-        if again.trim().to_uppercase() == "N" {
+        if again.trim().to_uppercase() == "N" { //to stop the program if user is done
             println!("Thanks for using ekenem's calculator. See ya!");
             break;
         }
     }
 }
- // =================== AREA FORMULAS =======================
+ //  AREA FORMULAS  preferred this way for readability
 
 // Trapezium: Area = height/2 * (base1 + base2)
 fn area_trapezium() {
@@ -110,7 +110,6 @@ fn area_cube() {
     println!("Area of Cube = {:.2}", area);
 }
 
-// =================== VOLUME FORMULA =======================
 
 // Cylinder: Volume = pi x radius^2 x height
 fn volume_cylinder() {
