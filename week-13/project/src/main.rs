@@ -1,7 +1,7 @@
 use std::io::Read;
 
 fn open_file(x: &str) {
-    // We use the parameter 'x' so it opens the correct file for the role
+   
     match std::fs::File::open(x) {
         Ok(mut file) => {
             let mut contents = String::new();
@@ -39,7 +39,7 @@ fn main() {
         };
 
         match status {
-            1 => open_file("globacom_db.sql"), // Fixed typo from globalcom to globacom
+            1 => open_file("globacom_db.sql"), 
             2 => open_file("project_tb.sql"),
             3 => open_file("staff_tb.sql"),
             4 => open_file("customer_tb.sql"),
